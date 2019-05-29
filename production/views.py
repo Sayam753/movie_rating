@@ -14,6 +14,7 @@ gr = {
 
 def register(request):
     a=10
+    b=20
     if request.method == "POST":
         form = forms.UserRegisterForm(request.POST)
         if form.is_valid():
