@@ -1,0 +1,7 @@
+fields:
+	movie, // Foreign key to movie
+	public_user,	// foreign key to public user
+	rating,	// float/decimal value between 0 and 5
+	rated_on // auto date time when movie was rated
+
+	

@@ -1,0 +1,31 @@
+fields:
+	id, //auto-generated
+	first_name, 
+	last_name,
+	username,
+	email,
+	phone_no,
+	birth_date, // date-time field
+	biography,
+
+methods:
+	calc_age() // calculates current age using birth date
+
+
+NOTE:
+1. fname, lname, username, email are fields available in default User model of django available at django.contrib.auth.models
+	#Official docs -  https://docs.djangoproject.com/en/2.1/ref/contrib/auth/
+	
+Since all these fields are available, you can extend Person model using User model	
+This is how an extended model will look like
+	fields:
+		id, //auto-generated
+		user, // one to one link to user model
+		phone_no,
+		birth_date,
+		... // more fields
+
+#How to extend user model - https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html#onetoone
+
+(THIS IS OPTIONAL, YOU CAN DIRECTLY MAKE PERSON MODEL ALSO)
+

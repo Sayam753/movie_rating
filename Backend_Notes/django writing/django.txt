@@ -1,0 +1,106 @@
+python -m django --version
+1. Django-admin gives a list of sub-commands.
+2. Django-admin startproject <project_name> initialises the project.
+3. We will be using settings.py to change the settings and various configurations.
+4. Wigs.py how the python application and web-application communicate
+5. For making the server run, python manage.py runserver
+6. Local ip is 127.0.0.1:8000 is the port number. The alias for this is localhost:8000
+7. urls.py is the way to map the urls to certain locations
+
+
+--video 2
+1. A single project can have multiple apps.
+2. Single app can also be added to multiple apps.
+3. For creating an app, python manage.py startapp <app_name>
+4. Def home is going to handle the traffic from the home page of the blog.
+5. Create urls.py in your app named blog.
+
+--video 3
+Objective - learning how to pass the templates and variables to them
+To look for templates, add the path of the app in the setting.py installed apps.
+To overcome coping the here and there, use template inheritance.
+
+
+--video 4
+Python manage.py createsuperuser
+
+--video 5 databases
+Orm - object relational mapper
+Allows us to access the database in an easily used object oriented way.
+We will be using Sqllite database for testing and Postgres for production
+Classes are treated as models and models.py is present in the blog application.
+Each class is different table in the database.
+Each attribute in the class is different field in the database.
+Text Field in the models has no limit. 
+Auto_now in the date and time field helps in updating date and time field every time the post is updated
+With auto_now_add captures only the date and time of creation
+We need to run migrations to update the database 
+Migrations allow us to make changes in the sqlite database. Just run python manage.py migrate after python manage.py makemigrations
+Run python manage.py shell to open command line python shell
+Querying for our users
+>> from blog.models import Post
+>> from django.contrib.auth.models import User
+>> User.objects.all()
+>> User.objects.first()
+>> User.objects.last()
+>> User.objects.filter(username="Sayam")
+new_user.id
+new_user.pk
+Post.objects.all()
+post_1 = Post(title =  'Blog 1',content = 'First one', author =user)
+post_1.save()
+post_2 = Post(title='Blog 2', content = 'second post content' ,author_id= user.id)
+postt = Post.objects.first()
+postt.author.email
+user.post_set
+Dundur str method --to get more information about the object 
+user.post_set.all() for checking all the posts of the user
+user.modelname_set
+user.post_set.create(title='blog 3',content='third post !!!!') no author is required and no requirement for saving the file
+
+Dictionaries keys should be same as the database fields.
+post.date_posted|date:"F d, Y" 
+
+We need to register the posts model with the admin page in admin.py of model
+admin.site.register(Post)
+
+Add all the apps to the settings in setting.py
+If we need to change something in the form, then create a new form that inherits properties of our original form
+Using crispy forms to handle forms
+pip install django-crispy-forms
+Login and logout are class based views.They do not match templates. --> throws an error as it is looking for registration directory and login.html
+But we can direct Django to look inside our templates
+
+Video 7
+If we do not want the default logout page to come up(as it log outs the superuser), set template_name = "users/logout.html"
+Django has a user that checks is_authenticated
+For not allowing the user to access profile, user login user decorator
+/login/next=?/profile returns the user to the same previous location
+
+Video 8
+Learning Django signals to call functions one after other.
+Pillow is the library to work with images.
+Add a Django signal to automatically create profiles when user is logged in.
+If we want to access functionality of parent class, use super
+
+Video 10
+We will be using class based views
+--
+List views, detail views, create views, update views and delete views for classes
+List views -- subscription of youtube
+Change the name of the object list predefined by the class to context_object_name
+
+Video 11
+import json
+from django.core.paginator import Paginator
+p = Paginator(l,2)
+p.num_pages
+To loop over pages. page_range
+for page in p.page_range:
+    ...:     print(page)
+p1 = p.page(1)
+p1.number
+p1.object_list
+p1.has_next()
+p1.next_page_number()
+http://127.0.0.1:8000/?page=3 

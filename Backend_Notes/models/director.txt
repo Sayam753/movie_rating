@@ -1,0 +1,14 @@
+fields:
+	id,
+	person, // one to one link to user model
+	.... Add more relevant fields
+
+methods:
+	directing_since() // iterate through all movies and find the release date of first movie of the director
+	best_movie() // Of all the movies that he/she has directed, find the one with higest rating
+	worst_movie() // similar, but find movie with lowest rating
+
+
+NOTE:
+movies are not included here as movie model has field for director
+

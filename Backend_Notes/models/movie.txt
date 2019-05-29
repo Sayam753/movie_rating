@@ -1,0 +1,14 @@
+fields:
+	id,	//auto generated
+	title,	// unique for all movies
+	description,
+	release_date, //date-time or date field
+	director, //foreign key to director {or many to many keys if supporting multiple directors like avengers ;) }
+	actors, // many to many keys to actors
+	link_to_imdb_page, //url field?
+	cover_image, // actual file/image field. Not a url
+
+methods:
+	get_avg_rating() // compiles avg rating from all ratings
+
+ 

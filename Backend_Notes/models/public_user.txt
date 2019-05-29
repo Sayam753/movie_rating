@@ -1,0 +1,14 @@
+fields:
+	id,
+	person, // one to one link to user model
+	watched_movies, // OPTIONAL FIELD. see note section below!
+
+methods:
+	higest_rated_movie() // find the movie that user has given higest rating
+	lowest_rated_movie() // find the movie that user has given lowest rating
+	avg_rating() // For all the movies user has rated, find the avg rating that he has given till now
+
+NOTE:
+watched_movies would ideally contain all the movies that the user has watched.
+This could be used to ensure that user can rate only the movies that she/he has watched.
+This part is completely optional

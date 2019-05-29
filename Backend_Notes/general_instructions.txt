@@ -1,0 +1,23 @@
+1. All the accompanying files contain fields expected in each model and how organization of models will take place.
+
+2. Feel free to add more fields or alter the organization in any way that you are comfortable.
+
+3. Add appropriate attributes to each field. Like null, blank, unique, max_length etc. You will also need to choose appropriate field type
+
+4. Make appropriate urls/views/forms/serializers to perform each function.
+
+5. Appropriate urls should be available to perform tasks like add/modify/delete actor/movie/person/
+
+6. As discussed, don't bother about authentication. i.e. allow to modify data even without logging in.
+
+7. Remember that GET reqests should not be used for altering data of any kind.
+
+8. If you are not able to learn django-rest, you can simply implement functionalities as normal django project using models/views/forms/templates. You can make basic html pages with forms for adding/deleting etc. You can even directy print output to console if you dont want to display in template. (I am more interested in the way you implement model-view-form logic rather than how you implement REST. So first focus on implementing core functionalities, then go for REST. If you learn core django properly, django_rest will be a piece of cake) 
+
+9. If you get stuck anywhere or have any doubts, feel free to contact anytime.
+
+10. Everyone has to complete project individually, not as a group. Please refrain from directly copying the code from each other.
+
+11. We will collect the projects between 5-10th of April, depending on your progress till then. 
+
+12. It's perfectly fine if you are unable to implement all the functionalities. Do as much as you can. If you learn anything interesting that you feel might be helpful in Techfesia, include it in the project (even if it is not directly relevant to movie rating system)
