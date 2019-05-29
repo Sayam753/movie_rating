@@ -4,7 +4,7 @@
 pip install -r requirements.txt
 ```
 
-## Reseting the migrations and clear the database
+## Reseting migrations and clearing the database
 ```shell
 find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
 find . -path "*/migrations/*.pyc"  -delete
