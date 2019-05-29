@@ -9,7 +9,7 @@ gr = {
     'a':'is_production_company',
     'b':'is_actor',
     'c':'is_director',
-    'd':'public_user'
+    'd':'public_user', 
 }
 
 def register(request):
