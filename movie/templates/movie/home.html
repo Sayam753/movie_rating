@@ -1,0 +1,15 @@
+{% extends "movie/base.html" %}
+{%block content%}
+    {% for movie in movies %}
+    <article class="media content-section">
+      <div class="media-body">
+        <div class="article-metadata">
+          <a class="mr-2" href="{%url 'user-posts' movie.author.username %}">{{ movie.author }}</a>
+          <small class="text-muted">Release Date: {{ movie.release_date|date:"F d, Y" }}</small>
+        </div>
+        <h2><a class="article-title" href="{%url 'post_detail' movie.id%}">Name: {{ movie.title }}</a></h2>
+        <p class="article-content">Description: {{ movie.description }}</p>
+      </div>
+    </article>
+    {% endfor %}
+{%endblock content%}

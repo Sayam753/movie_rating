@@ -1,0 +1,46 @@
+{% extends "movie/base.html" %}
+{% load has_group %}
+{% load has_already_rated %}
+{% load capture_rating %}
+{% block content %}
+  <article class="media content-section">
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2" href="{%url 'user-posts' object.author.username %}">{{ object.author }}</a>
+        <small class="text-muted">{{ object.release_date|date:"F d, Y" }}</small>
+      </div>
+      <h2 class="article-title">Name: {{ object.title }}</h2>
+      <p class="article-content">Description: {{ object.description }}</p>
+      <p class="article-content">Production house : {{ object.author }}</p>
+      <p class="article-content">Directors</p>
+      <ul>
+        {% for d in object.directors.all %}
+          <li><p class="article-content">{{d}}</p></li>
+        {% endfor %}
+      </ul>
+      <p class="article-content">Actors</p>
+      <ul>
+        {% for d in object.actors.all %}
+          <li><p class="article-content">{{d}}</p></li>
+        {% endfor %}
+      </ul>
+      <p class="article-content">Average Rating so far {{ object.get_avg_rating }}</p>
+      {% if user.is_authenticated and request.user|has_group:'public_user' %}
+        {% if user|has_already_rated:object.id %}
+          <p class="article-content">You have already rated the movie.</p>
+          <p class="article-content">Your rating given is {{ user|capture_rating:object.id }}</p>
+          <div class="border-top pt-3">
+            <small class = "text-muted">
+              Want to re-rate it?<a class="ml-2" href="{% url 're_rate' object.id %}"> Re-rate </a>
+            </small>
+          </div>
+        {% else %}
+          <div>
+            <a class ="btn btn-secondary btn-sm mt-1 mb-1" href = "{% url 'movie_update' object.id %}">Give a rating</a>
+          </div>
+        {% endif %}
+      {% endif %}
+
+    </div>
+  </article>
+{%endblock content%}
