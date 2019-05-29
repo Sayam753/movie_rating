@@ -19,4 +19,6 @@ python manage.py createsuperuser
 ```
 
 ## Running the local server
+```shell
 python manage.py runserver
+```
