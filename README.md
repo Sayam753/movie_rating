@@ -1,4 +1,4 @@
 # movie_rating
 ## Installing the requirements
-```bash
+```shell
 pip install -r requirements.txt
