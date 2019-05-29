@@ -17,3 +17,6 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py createsuperuser
 ```
+
+## Running the local server
+python manage.py runserver
