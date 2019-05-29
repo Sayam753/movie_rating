@@ -13,6 +13,7 @@ gr = {
 }
 
 def register(request):
+    a=10
     if request.method == "POST":
         form = forms.UserRegisterForm(request.POST)
         if form.is_valid():
