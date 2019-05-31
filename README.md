@@ -22,3 +22,10 @@ python manage.py createsuperuser
 ```shell
 python manage.py runserver
 ```
+
+## Creating groups
+After running the server, login as admin. Create four groups-
+    * is_actor
+    * is_director
+    * is_production_company
+    * public_user
