@@ -30,4 +30,4 @@ After running the server, login as admin. Create four groups-
 - is_production_company
 - public_user
 
-Test the application live on http://45.76.151.11:8000/
+
